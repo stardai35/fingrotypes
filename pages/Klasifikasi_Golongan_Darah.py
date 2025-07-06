@@ -196,6 +196,26 @@ if uploaded_file is not None:
                 'Confidence': [f"{confidence:.2f}%", "-"] # Confidence hanya untuk golongan darah
             })
             st.table(df)
+            st.markdown(
+    """
+    <a href="https://fingrotype.streamlit.app/Tentang_Golongan_Darah" target="_self">
+        <button style="
+            background-color:#008CBA;
+            border:none;
+            color:white;
+            padding:10px 20px;
+            text-align:center;
+            text-decoration:none;
+            display:inline-block;
+            font-size:16px;
+            margin:4px 2px;
+            cursor:pointer;">
+            👉 Lihat Penjelasan Lengkap Golongan Darah
+        </button>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
             
 
         with col_chart:
