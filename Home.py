@@ -15,23 +15,7 @@ st.write("""
 Aplikasi ini memanfaatkan teknologi Deep Learning berbasis Convolutional Neural Network (CNN) untuk memprediksi golongan darah seseorang dengan menggunakan gambar sidik jarinya. 
 Teknologi ini diharapkan dapat membantu dalam proses identifikasi golongan darah dengan cara yang cepat, mudah, dan tanpa perlu alat tes darah konvensional.
 """)
-st.markdown("""
-    <a href="https://fingrotype.streamlit.app/Klasifikasi_Golongan_Darah" target="_self">
-        <button style="
-            background-color:#4CAF50;
-            border:none;
-            color:white;
-            padding:15px 32px;
-            text-align:center;
-            text-decoration:none;
-            display:inline-block;
-            font-size:16px;
-            margin:4px 2px;
-            cursor:pointer;">
-            Prediksi saya sekarang! ꩜☝️
-        </button>
-    </a>
-""", unsafe_allow_html=True)
+st.link_button("Prediksi saya sekarang! ꩜☝️", "https://fingrotype.streamlit.app/Klasifikasi_Golongan_Darah")
 
 # Dataset Section
 # Fungsi untuk menampilkan gambar dari folder golongan darah
