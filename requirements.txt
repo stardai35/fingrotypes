@@ -1,4 +1,7 @@
-streamlit
-tensorflow>=2.11,<2.13
-pillow
+scikit-learn==0.22.1
 numpy
+pandas
+matplotlib
+streamlit==1.37.1
+Pillow
+seaoborn
