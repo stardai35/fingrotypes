@@ -171,7 +171,7 @@ if uploaded_file is not None:
 
     with col_img_original:
         st.subheader("📥 Gambar Asli")
-        st.image(img, use_column_width=False, width=200)
+        st.image(img, use_container_width=False, width=200)
 
     # Tombol prediksi
     if st.button("🔍 Prediksi Sekarang !"):
@@ -181,7 +181,7 @@ if uploaded_file is not None:
 
         with col_img_processed:
             st.subheader("📋 Ekstraksi Pola dan Hasil Prediksi")
-            st.image(img_boxed_pattern, use_column_width=False, width=200) # Menggunakan use_column_width agar menyesuaikan lebar kolom
+            st.image(img_boxed_pattern, use_container_width=False, width=200) # Menggunakan use_column_width agar menyesuaikan lebar kolom
 
         st.markdown("---") # Garis pemisah untuk layout lebih rapi
 
