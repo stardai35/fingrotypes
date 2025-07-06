@@ -6,3 +6,4 @@ seaborn
 streamlit
 pillow
 tensorflow
+opencv-python
