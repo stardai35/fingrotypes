@@ -12,7 +12,7 @@ st.markdown("""
 - **Testing Model:** CNN pre-trained model VGG-16  
 - **Optimizer:** Adam Optimizer  
 - **Deployment:** Streamlit with Python  
-- **Accuracy:** 76%
+- **Accuracy:** 80%
 """)
 
 # Methodology Section
