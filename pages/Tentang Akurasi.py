@@ -22,14 +22,14 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.write("Confusion Matrix")
-    st.image("https://photos.app.goo.gl/k9kEgVFpPz4L416d9", caption="Confusion Matrix", use_container_width=True)
+    st.image("https://pbs.twimg.com/media/Gv4CZlWW0AIMfU8?format=png&name=small", caption="Confusion Matrix", use_container_width=True)
     
     st.write("Precision Recall")
-    st.image("https://photos.app.goo.gl/xxPZ5MQ94x9Knrt57", caption="Report Precision Recall", use_container_width=True)
+    st.image("https://pbs.twimg.com/media/Gv4CZcTa4AAWtI0?format=png&name=small", caption="Report Precision Recall", use_container_width=True)
 
 with col2:
     st.write("Training and Testing Loss Ratio")
-    st.image("https://photos.app.goo.gl/gTV31mDwKhbJS4hr9", caption="Training vs Testing Loss", use_container_width=True)
+    st.image("https://pbs.twimg.com/media/Gv4CZjXWcAA9_8h?format=jpg&name=medium", caption="Training vs Testing Loss", use_container_width=True)
     
     st.write("Overall Architecture of the Project")
-    st.image("https://photos.app.goo.gl/o3EDq9GYotNzxekNA", caption="Project Architecture",use_container_width=True)
+    st.image("https://pbs.twimg.com/media/Gv4CZiNa0AA34kS?format=jpg&name=large", caption="Project Architecture",use_container_width=True)
