@@ -39,10 +39,10 @@ with st.expander("🧭 Panduan Mandiri: Upload atau Ambil Gambar Sidik Jari", ex
 # Load model
 # Pastikan path ke model Anda benar
 try:
-    model = load_model('best_vgg16_model.h5')
+    model = load_model('best_vgg16_model (3).h5')
     class_names = ['A', 'AB', 'B', 'O']
 except Exception as e:
-    st.error(f"Gagal memuat model: {e}. Pastikan file 'model/best_vgg16_model.h5' ada dan tidak rusak.")
+    st.error(f"Gagal memuat model: {e}. Pastikan file 'best_vgg16_model (3).h5' ada dan tidak rusak.")
     st.stop() # Hentikan eksekusi jika model tidak dapat dimuat
 
 # Fungsi prediksi golongan darah
