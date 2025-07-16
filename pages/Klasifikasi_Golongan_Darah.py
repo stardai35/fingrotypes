@@ -35,9 +35,10 @@ with st.expander("🧭 Panduan Mandiri: Upload atau Ambil Gambar Sidik Jari", ex
 
     > 📌 **Tips**: semakin kontras sidik jari terlihat semakin cepat prosesnya
     """)
-        # Sisipkan video YouTube
-    st.video("https://youtu.be/pKcG1bjpfFA")
+    col1, col2, col3 = st.columns([1, 2, 1])  # rasio lebar kolom
 
+with col2:
+    st.video("https://youtu.be/pKcG1bjpfFA")
 # Load model
 # Pastikan path ke model Anda benar
 try:
