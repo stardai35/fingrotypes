@@ -35,16 +35,37 @@ with st.expander("🧭 Panduan Mandiri: Upload atau Ambil Gambar Sidik Jari", ex
 
     > 📌 **Tips**: semakin kontras sidik jari terlihat semakin cepat prosesnya
     """)
+        # Sisipkan video YouTube
+    st.video("https://youtu.be/pKcG1bjpfFA")
 
 # Load model
 # Pastikan path ke model Anda benar
 try:
+    fingerprint_model = load_model('fingerprint_detection_model.h5')  # Model dengan kelas 'y'/'n'
     model = load_model('best_vgg16_model (3).h5')
     class_names = ['A', 'AB', 'B', 'O']
 except Exception as e:
-    st.error(f"Gagal memuat model: {e}. Pastikan file 'best_vgg16_model (3).h5' ada dan tidak rusak.")
+    st.error(f"Gagal memuat model: {e}. Pastikan file 'est_vgg16_model (3).h5' ada dan tidak rusak.")
     st.stop() # Hentikan eksekusi jika model tidak dapat dimuat
-
+# Fungsi untuk deteksi apakah gambar adalah sidik jari (y/n)
+def check_fingerprint(img):
+    img_resized = img.resize((224, 224)).convert("RGB")
+    img_array = image.img_to_array(img_resized)
+    img_array = np.expand_dims(img_array, axis=0) / 255.0
+    prediction = fingerprint_model.predict(img_array, verbose=0)
+    
+    # Jika model output binary (sigmoid)
+    if prediction.shape[1] == 1:  # Output tunggal (0-1)
+        is_fingerprint = prediction[0][0] > 0.5
+        confidence = prediction[0][0] if is_fingerprint else 1 - prediction[0][0]
+        return 'y' if is_fingerprint else 'n', confidence * 100
+    
+    # Jika model output multiclass (softmax)
+    else:  # Output dua kelas ['n', 'y']
+        class_idx = np.argmax(prediction)
+        confidence = np.max(prediction) * 100
+        return ('y', confidence) if class_idx == 1 else ('n', confidence)
+    
 # Fungsi prediksi golongan darah
 def predict_blood_type(img):
     img_resized = img.resize((224, 224)).convert("RGB")
@@ -160,43 +181,56 @@ def extract_and_classify_pattern(img_pil):
 
 
 # Upload gambar
-
 uploaded_file = st.file_uploader("", type=["jpg", "jpeg", "png", "bmp"])
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
-
-    # Kolom untuk gambar asli dan gambar yang diproses
+    
+    # Tampilkan gambar asli
     col_img_original, col_img_processed = st.columns(2)
-
     with col_img_original:
         st.subheader("📥 Gambar Asli")
-        st.image(img, use_container_width=False, width=200)
-
+        st.image(img, use_column_width=False, width=200)
+    
     # Tombol prediksi
     if st.button("🔍 Prediksi Sekarang !"):
-        # Lakukan prediksi dan fokus pola
-        img_boxed_pattern, pattern = extract_and_classify_pattern(img)
-        scores, label, confidence = predict_blood_type(img)
-
-        with col_img_processed:
-            st.subheader("📋 Ekstraksi Pola dan Hasil Prediksi")
-            st.image(img_boxed_pattern, use_container_width=False, width=200) # Menggunakan use_column_width agar menyesuaikan lebar kolom
-
-        st.markdown("---") # Garis pemisah untuk layout lebih rapi
-
-        # Kolom untuk Ringkasan dan Grafik Confidence Score
-        col_summary, col_chart = st.columns([1, 2]) # Ratio 1:2 untuk ringkasan dan grafik
-
-        with col_summary:
-            st.subheader("📋INFORMASI GOLONGAN DARAH")
-            df = pd.DataFrame({
-                'Kategori': ['Golongan Darah', 'Pola Sidik Jari'],
-                'Hasil': [label, pattern],
-                'Confidence': [f"{confidence:.2f}%", "-"] # Confidence hanya untuk golongan darah
-            })
-            st.table(df)
-            st.markdown(
+        # Pertama, cek apakah gambar adalah sidik jari (y/n)
+        result, confidence = check_fingerprint(img)
+        
+        if result == 'n':
+            st.error(f"⚠️ Gambar bukan sidik jari (Confidence: {confidence:.2f}%). Tidak dapat melanjutkan prediksi.")
+            st.warning("Silakan upload gambar sidik jari yang valid untuk analisis lebih lanjut.")
+            
+            # Tampilkan visualisasi (opsional)
+            with col_img_processed:
+                st.subheader("❌ Hasil Deteksi")
+                st.image(img, use_column_width=False, width=200, 
+                        caption="Gambar tidak terdeteksi sebagai sidik jari")
+        else:
+            st.success(f"✅ Gambar terdeteksi sebagai sidik jari (Confidence: {confidence:.2f}%). Melanjutkan analisis...")
+            
+            # Lanjutkan dengan prediksi golongan darah dan pola
+            img_boxed_pattern, pattern = extract_and_classify_pattern(img)
+            scores, label, blood_confidence = predict_blood_type(img)
+            
+            with col_img_processed:
+                st.subheader("📋 Ekstraksi Pola dan Hasil Prediksi")
+                st.image(img_boxed_pattern, use_column_width=False, width=200)
+            
+            st.markdown("---")
+            
+            # Kolom untuk Ringkasan dan Grafik Confidence Score
+            col_summary, col_chart = st.columns([1, 2])
+            
+            with col_summary:
+                st.subheader("📋 INFORMASI GOLONGAN DARAH")
+                df = pd.DataFrame({
+                    'Kategori': ['Golongan Darah', 'Pola Sidik Jari'],
+                    'Hasil': [label, pattern],
+                    'Confidence': [ f"{blood_confidence:.2f}%", "-"]
+                })
+                st.table(df)
+                st.markdown(
     """
     <a href="https://fingrotype.streamlit.app/Tentang_Golongan_Darah" target="_self">
         <button style="
@@ -217,23 +251,21 @@ if uploaded_file is not None:
     unsafe_allow_html=True
 )
             
-
-        with col_chart:
-            st.subheader("📊 Confidence Score Golongan Darah")
-            fig, ax = plt.subplots(figsize=(8, 5)) # Ukuran figure lebih besar
-            bar_colors = ['#4caf50', '#2196f3', '#ff9800', '#f44336'] # Warna untuk setiap bar
-            bars = ax.bar(class_names, scores * 100, color=bar_colors)
-            ax.set_ylim([0, 100])
-            ax.set_ylabel("Confidence (%)")
-            ax.set_xlabel("Golongan Darah")
-            ax.set_title("Distribusi Confidence Score")
-
-            # Menambahkan nilai di atas bar
-            for bar in bars:
-                yval = bar.get_height()
-                ax.text(bar.get_x() + bar.get_width()/2, yval + 1, round(yval, 2), ha='center', va='bottom') # Tambahkan sedikit offset
-
-            st.pyplot(fig)
-
+            with col_chart:
+                st.subheader("📊 Confidence Score Golongan Darah")
+                fig, ax = plt.subplots(figsize=(8, 5))
+                bar_colors = ['#4caf50', '#2196f3', '#ff9800', '#f44336']
+                bars = ax.bar(class_names, scores * 100, color=bar_colors)
+                ax.set_ylim([0, 100])
+                ax.set_ylabel("Confidence (%)")
+                ax.set_xlabel("Golongan Darah")
+                ax.set_title("Distribusi Confidence Score")
+                
+                for bar in bars:
+                    yval = bar.get_height()
+                    ax.text(bar.get_x() + bar.get_width()/2, yval + 1, round(yval, 2), 
+                            ha='center', va='bottom')
+                
+                st.pyplot(fig)
 else:
     st.info("Silakan upload gambar sidik jari terlebih dahulu untuk memulai.")
