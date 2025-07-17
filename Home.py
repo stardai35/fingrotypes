@@ -11,7 +11,17 @@ st.set_page_config(
 
 # Section Overview
 st.markdown('<h2 id="overview">Overview</h2>', unsafe_allow_html=True)
-    st.video("https://youtu.be/pKcG1bjpfFA")
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/pKcG1bjpfFA" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 st.write("""
 Aplikasi ini memanfaatkan teknologi Deep Learning berbasis Convolutional Neural Network (CNN) untuk memprediksi golongan darah seseorang dengan menggunakan gambar sidik jarinya. 
 Teknologi ini diharapkan dapat membantu dalam proses identifikasi golongan darah dengan cara yang cepat, mudah, dan tanpa perlu alat tes darah konvensional.
