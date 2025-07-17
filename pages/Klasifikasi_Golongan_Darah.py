@@ -195,7 +195,7 @@ if uploaded_file is not None:
         result, confidence = check_fingerprint(img)
         
         if result == 'n':
-            st.error(f"⚠️ Gambar bukan sidik jari (Confidence: {confidence:.2f}%). Tidak dapat melanjutkan prediksi.")
+            st.error(f"⚠️ Gambar bukan sidik jari. Tidak dapat melanjutkan prediksi.")
             st.warning("Silakan upload gambar sidik jari yang valid untuk analisis lebih lanjut.")
             
             # Tampilkan visualisasi (opsional)
