@@ -11,9 +11,6 @@ st.set_page_config(
 
 # Section Overview
 st.markdown('<h2 id="overview">Overview</h2>', unsafe_allow_html=True)
-    col1, col2, col3 = st.columns([1, 2, 1])  # rasio lebar kolom
-
-with col2:
     st.video("https://youtu.be/pKcG1bjpfFA")
 st.write("""
 Aplikasi ini memanfaatkan teknologi Deep Learning berbasis Convolutional Neural Network (CNN) untuk memprediksi golongan darah seseorang dengan menggunakan gambar sidik jarinya. 
