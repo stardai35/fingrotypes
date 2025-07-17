@@ -20,7 +20,7 @@ st.link_button("Prediksi saya sekarang! ꩜☝️", "https://fingrotype.streamli
 st.markdown(
     """
     <div style="text-align: left;">
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/pKcG1bjpfFA" 
+        <iframe width="640" height="360" src="https://youtu.be/6jSorLHovjE?si=eLYd_-jTkcdnsgum" 
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen></iframe>
     </div>
