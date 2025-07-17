@@ -35,10 +35,6 @@ with st.expander("🧭 Panduan Mandiri: Upload atau Ambil Gambar Sidik Jari", ex
 
     > 📌 **Tips**: semakin kontras sidik jari terlihat semakin cepat prosesnya
     """)
-    col1, col2, col3 = st.columns([1, 2, 1])  # rasio lebar kolom
-
-with col2:
-    st.video("https://youtu.be/pKcG1bjpfFA")
 # Load model
 # Pastikan path ke model Anda benar
 try:
@@ -191,7 +187,7 @@ if uploaded_file is not None:
     col_img_original, col_img_processed = st.columns(2)
     with col_img_original:
         st.subheader("📥 Gambar Asli")
-        st.image(img, use_column_width=False, width=200)
+        st.image(img, use_container_width=False, width=200)
     
     # Tombol prediksi
     if st.button("🔍 Prediksi Sekarang !"):
@@ -205,7 +201,7 @@ if uploaded_file is not None:
             # Tampilkan visualisasi (opsional)
             with col_img_processed:
                 st.subheader("❌ Hasil Deteksi")
-                st.image(img, use_column_width=False, width=200, 
+                st.image(img, use_container_width=False, width=200, 
                         caption="Gambar tidak terdeteksi sebagai sidik jari")
         else:
             st.success(f"✅ Gambar terdeteksi sebagai sidik jari (Confidence: {confidence:.2f}%). Melanjutkan analisis...")
@@ -216,7 +212,7 @@ if uploaded_file is not None:
             
             with col_img_processed:
                 st.subheader("📋 Ekstraksi Pola dan Hasil Prediksi")
-                st.image(img_boxed_pattern, use_column_width=False, width=200)
+                st.image(img_boxed_pattern, use_container_width=False, width=200)
             
             st.markdown("---")
             
