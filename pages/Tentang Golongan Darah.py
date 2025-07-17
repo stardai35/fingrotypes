@@ -39,8 +39,7 @@ st.write("""
 - **Rh-**: Tidak memiliki antigen D pada permukaan sel darah merah
 """)
 
-
-st.subheader("Rekomendasi Gaya Hidup Berdasarkan Golongan Darah")
+t.subheader("Rekomendasi Gaya Hidup Berdasarkan Golongan Darah")
 
 tab1, tab2, tab3, tab4 = st.tabs(["Golongan A", "Golongan B", "Golongan AB", "Golongan O"])
 
@@ -219,3 +218,4 @@ st.caption("""
 Catatan: Rekomendasi gaya hidup berdasarkan golongan darah ini berasal dari teori kontroversial 'Eat Right for Your Type'. Untuk keputusan yang lebih akurat dan aman, konsultasikan dengan dokter atau ahli gizi.
 """)
 st.markdown("[Buka Jurnal Korelasi Golongan darah dan Karakter - 2015](https://2024.sci-hub.se/6942/ec15ab76f8acedec4a463122976660ba/10.1371@journal.pone.0126983.pdf?download=true)")
+
