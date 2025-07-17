@@ -39,7 +39,7 @@ st.write("""
 - **Rh-**: Tidak memiliki antigen D pada permukaan sel darah merah
 """)
 
-t.subheader("Rekomendasi Gaya Hidup Berdasarkan Golongan Darah")
+st.subheader("Rekomendasi Gaya Hidup Berdasarkan Golongan Darah")
 
 tab1, tab2, tab3, tab4 = st.tabs(["Golongan A", "Golongan B", "Golongan AB", "Golongan O"])
 
