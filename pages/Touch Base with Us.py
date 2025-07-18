@@ -9,7 +9,7 @@ st.set_page_config(
 )
 st.markdown("""
 <div style="text-align: center; margin-bottom: 70px;">
-    <img src="https://scontent.fsrg6-1.fna.fbcdn.net/v/t1.6435-9/118701093_2853818641503341_8318291082169027335_n.jpg?stp=c0.169.1536.1536a_dst-jpg_s565x565_tt6&_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=fFMAR4Zic4AQ7kNvwGTWWxe&_nc_oc=AdlDoH0zPZ8J1N7VPWJlpJH_01G5zjIyPbL8yu36r3QgM4a9CQbmwsZ1YHxDOBC22uc2SOdxjKlrvo1W2N4YXNGC&_nc_zt=23&_nc_ht=scontent.fsrg6-1.fna&_nc_gid=-irsu7f3W03kYiLbeznyNQ&oh=00_AfPwx8G_Pi2PNfiHW7VoVl0l5tnn1r1UhZCacJsEaFmWKA&oe=68797ECC" style="border-radius: 50%; width: 150px;">
+    <img src="https://www.ukmpp.org/wp-content/uploads/2023/11/22-1.png" style="border-radius: 50%; width: 150px;">
     <h3>Tri Kusuma Faradila</h3>
 </div>
 """, unsafe_allow_html=True)
