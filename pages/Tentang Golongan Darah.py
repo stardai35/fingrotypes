@@ -46,7 +46,7 @@ tab1, tab2, tab3, tab4 = st.tabs(["Golongan A", "Golongan B", "Golongan AB", "Go
 with tab1:
     st.markdown("""
 <h3 style="display: flex; align-items: center;">
-    <img src="https://scontent.fsrg6-1.fna.fbcdn.net/v/t39.30808-6/518314847_1936400163858007_6126957784956098352_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeH1jHFS6QQyQjWvHmbNae1H1wwVSOsrVKbXDBVI6ytUpnIV_phvvzyUA9Z5xKJ1qGMuOuqzcMvKdcWBxyoqtIjm&_nc_ohc=jjd82sfVh1MQ7kNvwGiddsq&_nc_oc=Adke4XL6NcLqCLeJBPPuMWMJ8wV1YcowFWsivbQ9R_CG8q3DJ2V3uEGOD8q2TfSu88mnAtrFxV9z5tZrB87IIdKS&_nc_zt=23&_nc_ht=scontent.fsrg6-1.fna&_nc_gid=S-aBcRDHuVtY0NzbGEjsXg&oh=00_AfTcid8GEpPs5V72jmOALUmtPRR1nFv1az2rvfnRG4G_Qw&oe=687E33EB" width="70" style="margin-right:10px; border-radius:15px;">
+    <img src="https://i.pinimg.com/736x/a8/a9/00/a8a900e1c9fe76cc138c24f0f6785bc3.jpg" width="70" style="margin-right:10px; border-radius:15px;">
     Golongan A (The Agrarian – Si Petani)
 </h3>
 """, unsafe_allow_html=True)
@@ -90,7 +90,7 @@ with tab1:
 with tab2:
     st.markdown("""
 <h3 style="display: flex; align-items: center;">
-    <img src="https://scontent.fsrg6-1.fna.fbcdn.net/v/t39.30808-6/518317447_1936402547191102_552623589452088927_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGlKcyXPXbwZvzcxXLDkKXzFJJXrEd8D0AUklesR3wPQCcpIpCQbQwBEQ6RHt32rZ-rqlp2TJkHP5VJhRPyNTiV&_nc_ohc=i38i7fBH5hYQ7kNvwH5h63f&_nc_oc=AdkIuqPr-6F1-REsvSybqF_nEF-b9XEx_YbAqDzE4SZISc1n3sn3o3h2B12h1EoSco_PlX2HFjmy14IYECSxy1Ow&_nc_zt=23&_nc_ht=scontent.fsrg6-1.fna&_nc_gid=RhrwOZK7viAMDtoT_NEsOQ&oh=00_AfSsFkDJwT0wpeVh5jlVu5VQK86hayYzihdUDG491moLrQ&oe=687E3637" width="70" style="margin-right:10px; border-radius:15px;">
+    <img src="https://i.pinimg.com/736x/d6/dc/a5/d6dca51d493a9fbfe50b5cc15bb05abd.jpg" width="70" style="margin-right:10px; border-radius:15px;">
     Golongan B (The Nomad – Si Pengembara)
 </h3>
 """, unsafe_allow_html=True)
@@ -132,7 +132,7 @@ with tab2:
 with tab3:
     st.markdown("""
 <h3 style="display: flex; align-items: center;">
-    <img src="https://scontent.fsrg6-1.fna.fbcdn.net/v/t39.30808-6/518321254_1936402643857759_4354725241949664633_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeETr6p-OFR3lIiqNEQGcBb2M0MQZGBvcsAzQxBkYG9ywEng1nv7n0ck0YN0Qd5mCKNZi_PjknWT6zWsAc7h0O5b&_nc_ohc=8jWIHRnDLHkQ7kNvwEsJQcE&_nc_oc=Adk3mRpFM2gTRXl3Mzl13lElMaawIG6aY7QYlycgtO71jyFYr5kJiAChLbJXxGPI2QajonUdW7XZCBgEkY1iXRQK&_nc_zt=23&_nc_ht=scontent.fsrg6-1.fna&_nc_gid=L3-Mh6ORMZo19_HwWGY9dA&oh=00_AfQdPjQznQ9GzXn0Q2qypgsrmeAhvfmvuJMNhZmT-oc0WA&oe=687E4DEE" width="70" style="margin-right:10px; border-radius:15px;">
+    <img src="https://i.pinimg.com/736x/b7/b2/75/b7b275b17d0ae5a726f5205cc62cbef6.jpg" width="70" style="margin-right:10px; border-radius:15px;">
     Golongan AB (The Enigma – Si Misterius)
 </h3>
 """, unsafe_allow_html=True)
@@ -173,7 +173,7 @@ with tab3:
 with tab4:
     st.markdown("""
 <h3 style="display: flex; align-items: center;">
-    <img src="https://scontent.fsrg6-1.fna.fbcdn.net/v/t39.30808-6/520207653_1936402560524434_5780061594019684457_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGDRJ6FqZ0_B2dIb1ZcsGkwdDvG1cY-lr50O8bVxj6Wvp7Ai37CzXNCzYvLeLEBx75c83M7NBVJ75o080vqvqXo&_nc_ohc=1vn0mQmyLeQQ7kNvwGSc44I&_nc_oc=Adl5ZiPCSRif1xCmlLba4_1WT57B1_TThnuESBms9VwOmC02Cj45ZyhIMOjozV5RnHfRZ1UaK_bCL136K7QZYkl4&_nc_zt=23&_nc_ht=scontent.fsrg6-1.fna&_nc_gid=hONtrftKg8dYAcCwzOcl6Q&oh=00_AfRKmU5I4t9rGTjnEptBZ7dQExxLOzIOV4sizObcAPVkOQ&oe=687E3153" width="70" style="margin-right:10px; border-radius:15px;">
+    <img src="https://i.pinimg.com/736x/a3/0a/a0/a30aa022a2c071b6b410ff7b63e9a27f.jpg" width="70" style="margin-right:10px; border-radius:15px;">
     Golongan O (The Hunter – Si Pemburu)
 </h3>
 """, unsafe_allow_html=True)
