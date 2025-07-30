@@ -42,7 +42,7 @@ try:
     model = load_model('best_vgg16_model (3).h5')
     class_names = ['A', 'AB', 'B', 'O']
 except Exception as e:
-    st.error(f"Gagal memuat model: {e}. Pastikan file 'est_vgg16_model (3).h5' ada dan tidak rusak.")
+    st.error(f"Gagal memuat model: {e}. Pastikan file 'best_vgg16_model (3).h5' ada dan tidak rusak.")
     st.stop() # Hentikan eksekusi jika model tidak dapat dimuat
 # Fungsi untuk deteksi apakah gambar adalah sidik jari (y/n)
 def check_fingerprint(img):
