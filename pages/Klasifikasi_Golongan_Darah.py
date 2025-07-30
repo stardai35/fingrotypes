@@ -39,7 +39,7 @@ with st.expander("🧭 Panduan Mandiri: Upload atau Ambil Gambar Sidik Jari", ex
 # Pastikan path ke model Anda benar
 try:
     fingerprint_model = load_model('fingerprint_detection_model.h5')  # Model dengan kelas 'y'/'n'
-    model = load_model('best_vgg16_model.h5')
+    model = load_model('best_vgg16_modelbaik.h5')
     class_names = ['A', 'AB', 'B', 'O']
 except Exception as e:
     st.error(f"Gagal memuat model: {e}. Pastikan file 'best_vgg16_model.h5' ada dan tidak rusak.")
