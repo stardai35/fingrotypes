@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import cv2
-import joblib
 
 # Set judul
 st.set_page_config(page_title="Prediksi",page_icon="🩸", layout="wide")
@@ -39,11 +38,11 @@ with st.expander("🧭 Panduan Mandiri: Upload atau Ambil Gambar Sidik Jari", ex
 # Load model
 # Pastikan path ke model Anda benar
 try:
-    fingerprint_model = load_model('isFingerprint.h5')  # Model dengan kelas 'y'/'n'
+    fingerprint_model = load_model('fingerprint_detection_model.h5')  # Model dengan kelas 'y'/'n'
     model = load_model('besutovgg.h5')
     class_names = ['A', 'AB', 'B', 'O']
 except Exception as e:
-    st.error(f"Gagal memuat model: {e}. SISTEM DALAM PERBAIKAN")
+    st.error(f"Gagal memuat model: {e}. Pastikan file 'best_vgg16_model.h5' ada dan tidak rusak.")
     st.stop() # Hentikan eksekusi jika model tidak dapat dimuat
 # Fungsi untuk deteksi apakah gambar adalah sidik jari (y/n)
 def check_fingerprint(img):
