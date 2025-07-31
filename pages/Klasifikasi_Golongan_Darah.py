@@ -39,7 +39,7 @@ with st.expander("🧭 Panduan Mandiri: Upload atau Ambil Gambar Sidik Jari", ex
 # Load model
 # Pastikan path ke model Anda benar
 try:
-    fingerprint_model = joblib('isFingerprint.h5')  # Model dengan kelas 'y'/'n'
+    fingerprint_model = load_model('isFingerprint.h5')  # Model dengan kelas 'y'/'n'
     model = load_model('besutovgg.h5')
     class_names = ['A', 'AB', 'B', 'O']
 except Exception as e:
